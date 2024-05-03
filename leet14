@@ -1,0 +1,18 @@
+gegeben =["list","lisa","liam"]
+def longestCommonPrefix(strs):
+    bruteArr=""
+    for i in strs:
+        if bruteArr=="":
+            bruteArr=i
+        else:
+            for jindex, val in enumerate(i):#wir iterieren durch den String jetzt
+                if val == bruteArr[jindex]:
+                    continue
+                elif val != bruteArr[jindex]:
+                    for k in range (jindex, len(bruteArr)):
+                        bruteArr = bruteArr[:jindex] + bruteArr[jindex+1:]
+                        
+                        break
+                    break
+    return bruteArr
+print(longestCommonPrefix(gegeben))
